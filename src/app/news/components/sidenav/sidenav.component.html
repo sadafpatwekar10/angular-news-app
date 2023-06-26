@@ -1,0 +1,40 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <mat-toolbar color="primary">Categories </mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item (click)="getCategorizedNews('world')">
+        <a matLine> <mat-icon></mat-icon>World </a>
+      </mat-list-item>
+      <mat-list-item (click)="getCategorizedNews('science')">
+        <a matLine> <mat-icon></mat-icon>Science </a>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="app-sidenav-content">
+    <mat-toolbar color="primary">
+      <button
+        mat-icon-button
+        *ngIf="sidenav?.mode === 'over'"
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span>NewsApp</span>
+
+      <span class="example-spacer"></span>
+
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </mat-toolbar>
+    <div class="wrapper">
+      <app-news-list></app-news-list>
+    </div>
+  </div>
+</mat-sidenav-container>

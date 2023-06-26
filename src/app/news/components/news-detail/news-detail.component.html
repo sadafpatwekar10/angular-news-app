@@ -1,0 +1,17 @@
+<div class="details-wrapper">
+    <div class="container">
+        <div class="title-wrapper">
+            <button mat-icon-button (click)="navigateToHome()">
+                <mat-icon>arrow_back</mat-icon>
+              </button>
+              <h1 *ngIf="news.title">{{ news.title }}</h1>
+        </div>
+        
+        <span>Published On: {{ news.published_date | date: 'dd/MM/yyyy' }}</span>
+        <img
+            class="img-fluid"
+            src="{{ news.multimedia[0].url }}"
+        />
+        <p>{{ news.abstract }} </p>
+    </div>
+</div>

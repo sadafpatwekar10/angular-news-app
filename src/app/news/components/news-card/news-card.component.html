@@ -1,0 +1,14 @@
+<mat-card class="mat-elevation-z4" (click)="navigateToDetails(news)">
+  <mat-card-header>
+    <mat-card-title *ngIf="news.title">{{ news.title }}</mat-card-title>
+  </mat-card-header>
+
+  <img
+    *ngIf="news.multimedia && news.multimedia[0].url"
+    mat-card-image
+    src="{{ news.multimedia[0].url }}"
+  />
+  <mat-card-content>
+    <p>{{ news.abstract }}</p>
+  </mat-card-content>
+</mat-card>

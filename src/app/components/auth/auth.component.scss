@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+
+.gradient-custom-2 {
+  background: linear-gradient(to top left, #28b487, #7dd56f);
+}
+
+.full {
+  display: block;
+  width: 100%;
+}
+
+input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.auth-container {
+  background-color: $background;
+  height: 100vh;
+}

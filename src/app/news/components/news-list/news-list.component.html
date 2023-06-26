@@ -1,0 +1,9 @@
+<div fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="newsList">
+  <app-news-card
+    fxFlex="25%"
+    fxFlex.xs="100%"
+    fxFlex.sm="33%"
+    *ngFor="let news of newsList"
+    [news]="news"
+  ></app-news-card>
+</div>
